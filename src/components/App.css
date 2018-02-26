@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto');
+
+.App {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.App-logo {
+    /*animation: App-logo-spin infinite 20s linear;*/
+    font-size: 3em;
+    height: 100px;
+    width: 100px;
+    float: left;
+    margin: 10px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 130px;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 3em;
+    text-align: left;
+}
+
+.App-main {
+    padding: 10px;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+}

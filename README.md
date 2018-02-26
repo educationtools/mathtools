@@ -1,11 +1,7 @@
 # MathTools
 
 ## Veröffentlichen
-1. Statische Dateien erzeugen
-
-    npm run build
-    
-2. Dateien veröffentlichen (Repos müssen in mathtools/mathtools.github.io vorhanden sein)
+2. Statische Dateien erzeugen und Dateien veröffentlichen (Repos müssen in mathtools/mathtools.github.io vorhanden sein)
 
     ./deploy.sh
     

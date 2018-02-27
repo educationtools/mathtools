@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import RuleOfThree from '../components/RuleOfThree.js';
-import Button from '../components/Button.js';
 
 class App extends Component {
     render() {
@@ -15,9 +14,12 @@ class App extends Component {
                 </header>
                 <main className="App-main">
                     <h2>Dreisatz – Jetzt online berechnen!</h2>
+                    <p>
+                        Weitere Information zum Dreisatz gibt es bei <a href={"https://www.frustfrei-lernen.de/mathematik/dreisatz-rechnen-proportional.html"}>
+                            „Frustfrei lernen“
+                        </a>!
+                    </p>
                     <RuleOfThree/>
-
-                    <Button title="Berechnen"/>
                 </main>
             </div>
         )

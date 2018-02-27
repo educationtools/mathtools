@@ -48,6 +48,19 @@ class RuleOfThree extends Component {
         };
     }
 
+    calc = () => {
+        const in0 = this.state.fields[0][0].value;
+        const in1 = this.state.fields[0][1].value;
+        const mid1 = in1 / in0;
+        const out0 = this.state.fields[2][0].value;
+        const out1 = mid1 * out0;
+
+        const old = this.state;
+        old.fields[1][1].value = mid1;
+        old.fields[2][1].value = out1;
+        this.setState(old);
+    }
+
     _onDataChange = (data) => {
         console.log(data);
         const values = data.values;
@@ -72,31 +85,8 @@ class RuleOfThree extends Component {
             console.log(this.state.fields[data.index][i]);
         }
 
-
-        // CO
-        /*conValues[0] = Number.parseFloat(values[0]);
-        conValues[1] = Number.parseFloat(values[1]);
-
-        if (Number.isNaN(conValues[0])) {
-
-        } else {
-
-        }
-
-        switch (data.index) {
-            case 0:
-
-
-                break;
-            case 1:
-
-                break;
-            case 2:
-
-                break;
-            default:
-                console.log("Wrong data input detected.")
-        }*/
+        // Do calculation
+        this.calc();
     }
 
 
@@ -119,11 +109,17 @@ class RuleOfThree extends Component {
                                             if (field.validationError) {
                                                 validationErrorMessage = "Bitte geben Sie eine gültige Zahl ein.";
                                             }
-                                            return {
+
+                                            // Return object
+                                            let retObj = {
                                                 defaultValue: this.state.fields[idx][idx2].value.toString(),
                                                 disabled: field.disabled,
                                                 validationErrorMessage: validationErrorMessage
+                                            };
+                                            if (field.disabled) {
+                                                retObj.value = field.value;
                                             }
+                                            return retObj;
                                         })}
                                         onDataChange={this._onDataChange}
                                         index={idx}/>;
@@ -157,5 +153,13 @@ class RuleOfThree extends Component {
         </div>;
     }
 }
+
+RuleOfThree.defaultProps = {
+
+};
+
+RuleOfThree.propTypes = {
+
+};
 
 export default RuleOfThree;

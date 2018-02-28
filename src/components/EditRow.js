@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Edit from './Edit.js';
 import './Edit.css';
+import {FormGroup, Label} from "reactstrap";
 
 class EditRow extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class EditRow extends Component {
 
         this.state = {
             values: this.props.columns.map((column, idx) => {
-                return column.defaultValue
+                return column.defaultValue || ''
             })
         }
     }
@@ -28,7 +29,7 @@ class EditRow extends Component {
 
     _onChange = (e) => {
         const target = e.target;
-        const parent = target.parentNode;
+        const parent = target.parentNode.parentNode;
         const index = parent.cellIndex;
 
         // Update state with changed value
@@ -48,11 +49,11 @@ class EditRow extends Component {
         const row = columns.map((column, idx) => {
             const defaultValue = column.defaultValue;
             return <td key={idx}>
-
-             <div className={"EditRow-validationErrorMessage"}>
-                 {column.validationErrorMessage || ''}<br />
-             </div>
-                <Edit defaultValue={defaultValue} onChange={this._onChange} disabled={column.disabled} value={column.value}/>
+                <FormGroup>
+                    <Label>{column.validationErrorMessage || ''}</Label>
+                    <Edit defaultValue={defaultValue} onChange={this._onChange} disabled={column.disabled}
+                          value={column.value} {...column}/>
+                </FormGroup>
             </td>
         });
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {Input} from 'reactstrap';
 import './Edit.css';
 
 class Edit extends Component {
@@ -15,14 +16,13 @@ class Edit extends Component {
     _onChange = (e) => {
         console.log("GOT: onChange");
 
-        this.setState({value: e.target.value});
+        this.setState({value: e.target.value || ''});
         this.props.onChange(e);
     };
 
     render() {
-        return <input
+        return <Input
             className="Edit"
-            type="text"
             disabled={this.props.disabled ? "disabled" : ""}
             defaultValue={this.props.defaultValue}
             value={this.props.value}

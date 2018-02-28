@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import './RuleOfThree.css'
 import EditRow from "./EditRow";
+import {Col, Container, Row, Table} from "reactstrap";
 
 class RuleOfThree extends Component {
     constructor(props) {
@@ -69,6 +70,7 @@ class RuleOfThree extends Component {
             let _new = this.state;
 
             const newValue = Number.parseFloat(values[i].replace(',', '.'));
+            console.log(values[i]);
             console.log(newValue);
 
             if (Number.isNaN(newValue)) {
@@ -92,74 +94,77 @@ class RuleOfThree extends Component {
 
     render() {
         console.log(this.state);
-        return <div className="RuleOfThree">
-            <div className={"RuleOfThree-input"}>
-                Das hast du eingegeben …
+        return <Container className="RuleOfThree">
+            <Row>
+                <Col className={"RuleOfThree-input"}>
+                    Das hast du eingegeben …
 
-                <table>
-                    <thead>
-                    <th>A</th>
-                    <th>B</th>
-                    </thead>
-                    <tbody>
-                    {this.state.fields.map((row, idx) => {
-                        return <EditRow key={idx}
-                                        columns={row.map((field, idx2) => {
-                                            let validationErrorMessage = null;
-                                            if (field.validationError) {
-                                                validationErrorMessage = "Bitte geben Sie eine gültige Zahl ein.";
-                                            }
+                    <Table>
+                        <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {this.state.fields.map((row, idx) => {
+                            return <EditRow key={idx}
+                                            columns={row.map((field, idx2) => {
+                                                let validationErrorMessage = null;
+                                                if (field.validationError && !field.disabled) {
+                                                    validationErrorMessage = "Bitte geben Sie eine gültige Zahl ein.";
+                                                }
 
-                                            // Return object
-                                            let retObj = {
-                                                defaultValue: this.state.fields[idx][idx2].value.toString(),
-                                                disabled: field.disabled,
-                                                validationErrorMessage: validationErrorMessage
-                                            };
-                                            if (field.disabled) {
-                                                retObj.value = field.value;
-                                            }
-                                            return retObj;
-                                        })}
-                                        onDataChange={this._onDataChange}
-                                        index={idx}/>;
+                                                // Return object
+                                                let retObj = {
+                                                    disabled: field.disabled,
+                                                    validationErrorMessage: validationErrorMessage
+                                                };
+                                                if (field.disabled) {
+                                                    retObj.value = field.value.toString();
+                                                } else {
+                                                    retObj.defaultValue = field.value.toString();
+                                                }
+                                                return retObj;
+                                            })}
+                                            onDataChange={this._onDataChange}
+                                            index={idx}/>;
 
-                    })}
-                    </tbody>
-                </table>
-            </div>
-
-
-            <div className={"RuleOfThree-detected"}>
-                … und das hat der Computer erkannt:
-
-                <table>
-                    <thead>
-                    <th>A</th>
-                    <th>B</th>
-                    </thead>
-                    <tbody>
-                    {this.state.fields.map((row, idx) => {
-                        return <tr key={idx}>{row.map((field, idx2) => {
-
-                            return <td key={idx2}>{field.value.toString()}</td>;
                         })}
-                        </tr>;
+                        </tbody>
+                    </Table>
+                </Col>
 
-                    })}
-                    </tbody>
-                </table>
-            </div>
-        </div>;
+
+                <Col className={"RuleOfThree-detected"}>
+                    … und das hat der Computer erkannt:
+
+                    <Table>
+                        <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {this.state.fields.map((row, idx) => {
+                            return <tr key={idx}>{row.map((field, idx2) => {
+
+                                return <td key={idx2}>{field.value.toString()}</td>;
+                            })}
+                            </tr>;
+
+                        })}
+                        </tbody>
+                    </Table>
+                </Col>
+            </Row>
+        </Container>;
     }
 }
 
-RuleOfThree.defaultProps = {
+RuleOfThree.defaultProps = {};
 
-};
-
-RuleOfThree.propTypes = {
-
-};
+RuleOfThree.propTypes = {};
 
 export default RuleOfThree;

@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^0.100.2",
     "node-waves": "^0.7.6",
     "prop-types": "latest",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1",
-    "reactstrap": "^5.0.0-beta.2"
+    "react-scripts": "1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

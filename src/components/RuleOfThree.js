@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import './RuleOfThree.css'
 import EditRow from "./EditRow";
-import {Col, Container, Row, Table} from "reactstrap";
+
 
 class RuleOfThree extends Component {
     constructor(props) {
@@ -94,12 +94,14 @@ class RuleOfThree extends Component {
 
     render() {
         console.log(this.state);
-        return <Container className="RuleOfThree">
-            <Row>
-                <Col className={"RuleOfThree-input"}>
-                    Das hast du eingegeben …
+        return <div className="RuleOfThree">
+            <div className={"row"}>
+                <div className={"RuleOfThree-input col s12 m6"}>
+                    <p>
+                        Das hast du eingegeben …
+                    </p>
 
-                    <Table>
+                    <table>
                         <thead>
                         <tr>
                             <th>A</th>
@@ -132,14 +134,16 @@ class RuleOfThree extends Component {
 
                         })}
                         </tbody>
-                    </Table>
-                </Col>
+                    </table>
+                </div>
 
 
-                <Col className={"RuleOfThree-detected"}>
-                    … und das hat der Computer erkannt:
+                <div className={"RuleOfThree-detected col s12 m6"}>
+                    <p>
+                        … und das hat der Computer erkannt:
+                    </p>
 
-                    <Table>
+                    <table>
                         <thead>
                         <tr>
                             <th>A</th>
@@ -156,10 +160,10 @@ class RuleOfThree extends Component {
 
                         })}
                         </tbody>
-                    </Table>
-                </Col>
-            </Row>
-        </Container>;
+                    </table>
+                </div>
+            </div>
+        </div>;
     }
 }
 

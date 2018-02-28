@@ -1,22 +1,28 @@
 import React, {Component} from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'material-design-icons/iconfont/material-icons.css';
+import 'materialize-css/dist/css/materialize.min.css';
+import 'jquery/dist/jquery.min.js';
+import 'materialize-css/dist/js/materialize.min.js';
+
 import './App.css';
 import RuleOfThree from '../components/RuleOfThree.js';
-import {Navbar, NavbarBrand} from "reactstrap";
+import Dice from '../components/Random.js';
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <Navbar>
-                    <NavbarBrand>
-                        MathTools
-                    </NavbarBrand>
-                </Navbar>
+                <nav>
+                    <div className={"nav-wrapper blue-grey darken-4"}>
+                        <a className={"brand-logo"} href={"#!"}>
+                            MathTools
+                        </a>
+                    </div>
+                </nav>
                 <main className="App-main">
                     <h2>
                         Dreisatz
-                        <small className={"text-muted"}> :RuleOfThree</small>
+                        <small> :RuleOfThree</small>
                     </h2>
                     <p className={"text-muted"}>
                         Weitere Information zum Dreisatz gibt es bei <a
@@ -24,18 +30,45 @@ class App extends Component {
                         „Frustfrei lernen“
                     </a>!
                     </p>
-                    <p className={"lead"}>
+                    <p className={"flow-text"}>
                         Der Dreisatz – wer kennt ihn nicht aus dem Matheunterricht.
                         Doch manchmal benötigt man ihn nur kurz, um kleine Dinge zu berechnen.
                         Da hilft einem ein Onlinetool weiter:&nbsp;
-                        <strong>Einfach ausfüllen und das Ergebnis kommt sofort!</strong>
+                        <strong>Einfach ausfüllen und das Ergebnis erscheint sofort!</strong>
                     </p>
-                    <p>
+                    <blockquote>
                         <strong>Kleiner Tipp: </strong>Du kannst mit <kbd>TAB</kbd> ganz einfach zwischen den Feldern
                         wechseln. Einfach mal ausprobieren!
-                    </p>
+                    </blockquote>
                     <RuleOfThree/>
+
+                    <h2>
+                        Würfelsimulation
+                        <small> :Dice</small>
+                    </h2>
+                    <p className={"text-muted"}>
+                        Der ultimative Würfel!
+                    </p>
+                    <p className={"flow-text"}>
+                        <strong>10.000-mal würfeln?</strong> Das schafft nur der Computer. Um gute Ergebnisse für
+                        Aufgaben in Stochastik und Wahrscheinlichkeitsrechnung zu bekommen, reicht ein normaler
+                        Computer, ein Browser und diese Website.
+                    </p>
+                    <blockquote>
+                        <strong>Kleiner Tipp: </strong>Wenn du willst, dass nicht weiter gewürfelt wird, deaktiviere das
+                        Würfeln mit dem Schalter:
+                    </blockquote>
+                    <Dice/>
                 </main>
+                <footer className="page-footer blue-grey">
+                    <div className="footer-copyright">
+                        <div className="container">
+                            © 2018 by Jonathan Weth
+                            <a className="grey-text text-lighten-4 right"
+                               href="mailto:hansegucker@gmail.com">hansegucker@gmail.com</a>
+                        </div>
+                    </div>
+                </footer>
             </div>
         );
     }

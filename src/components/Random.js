@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {Bar} from 'react-chartjs-2';
 
 function randomInt(min, max) {
     // Returns a random integer between <min> and <max>
@@ -60,6 +61,56 @@ class Dice extends Component {
         window.setTimeout(this.roll, this.state.speed);
     };
 
+    /*renderChart = () => {
+        const contex = document.getElementById("Dice-chart").getContext('2d');
+        console.log(this.state.results);
+        let chart = new Chart(contex, {
+            type: 'bar',
+            data: {
+                labels: this.state.results.map((value, idx) => {
+                    return (idx+1).toString();
+                }),
+                datasets: [{
+                    label: 'Anzahl der Würfe',
+                    data: this.state.results,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        let oldState = this.state;
+        oldState.chart = chart;
+        this.setState(oldState);
+    };
+
+    componentDidMount() {
+        //this.renderChart();
+    }*/
+
     constructor(props) {
         super(props);
 
@@ -75,7 +126,8 @@ class Dice extends Component {
             ],
             totalRolls: 0,
             rolling: this.props.rollAtStart,
-            speed: this.props.speed
+            speed: this.props.speed,
+            chart: null
         };
 
         // Start rolling
@@ -83,6 +135,22 @@ class Dice extends Component {
     }
 
     render() {
+        const chartData = {
+            labels: this.state.results.map((value, idx) => {
+                return (idx + 1).toString();
+            }),
+            datasets: [{
+                label: 'Anzahl der Würfe',
+                data: this.state.results,
+
+                backgroundColor: 'rgba(255,99,132,0.2)',
+                borderColor: 'rgba(255,99,132,1)',
+                borderWidth: 0,
+                hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                hoverBorderColor: 'rgba(255,99,132,1)',
+            }]
+        };
+
         return <div className={"Dice"}>
             <div className="switch Dice-rolling-on-switch">
                 <div className={"row"}>
@@ -105,26 +173,38 @@ class Dice extends Component {
                     </div>
                 </div>
             </div>
-            <table className={"Dice-result-table"}>
-                <thead>
-                <tr>
-                    <th>Die Augenzahl …</th>
-                    <th>… wurde bis jetzt <i>x</i>-mal gewürfelt.</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Summe der Würfe</td>
-                    <td>{this.state.totalRolls}</td>
-                </tr>
-                {this.state.results.map(function (result, idx) {
-                    return <tr key={idx}>
-                        <td>{(idx + 1).toString()}</td>
-                        <td>{result.toString()}</td>
-                    </tr>;
-                })}
-                </tbody>
-            </table>
+            <div className={"row"}>
+                <div className={"col s12 m6"}>
+                    <h4>Ergebnisse</h4>
+                    <table className={"Dice-result-table"}>
+                        <thead>
+                        <tr>
+                            <th>Die Augenzahl …</th>
+                            <th>… wurde bis jetzt <i>x</i>-mal gewürfelt.</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Summe der Würfe</td>
+                            <td>{this.state.totalRolls}</td>
+                        </tr>
+                        {this.state.results.map(function (result, idx) {
+                            return <tr key={idx}>
+                                <td>{(idx + 1).toString()}</td>
+                                <td>{result.toString()}</td>
+                            </tr>;
+                        })}
+                        </tbody>
+                    </table>
+                </div>
+                <div className={"col s12 m6"}>
+                    <h4>Diagramm</h4>
+                    {this.state.rolling ?
+                        <p className={"flow-text"}>Bitte stoppen Sie das Würfeln, um das Diagramm zu sehen.</p> :
+                        <Bar data={chartData} redraw/>}
+                </div>
+            </div>
+
 
         </div>;
     }

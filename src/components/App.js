@@ -105,9 +105,6 @@ class DiceWithIntro extends Component {
                     Würfelsimulation
                     <small> :Dice</small>
                 </h3>
-                <p className={"text-muted"}>
-                    Der ultimative Würfel!
-                </p>
                 <p className={"flow-text"}>
                     <strong>10.000-mal würfeln?</strong> Das schafft nur der Computer. Um gute Ergebnisse für
                     Aufgaben in Stochastik und Wahrscheinlichkeitsrechnung zu bekommen, reicht ein normaler

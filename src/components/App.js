@@ -10,15 +10,42 @@ import Dice from '../components/Random.js';
 import {Route, Link} from "react-router-dom";
 
 class Header extends Component {
+    componentDidMount() {
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+        });
+    }
+
     render() {
         return <header>
             <nav>
+                <a href="#!" data-activates="slide-out" className="button-collapse hide-on-large-only">
+                    <i className="material-icons">menu</i>
+                </a>
                 <div className={"nav-wrapper blue-grey darken-4"}>
-                    <a className={"brand-logo"} href={"#!"}>
+                    <Link className={"brand-logo"} to={"/"}>
                         EduTools
-                    </a>
+                    </Link>
                 </div>
             </nav>
+            <ul id="slide-out" className="side-nav fixed">
+                <li><Link to={"/"}><i className={"material-icons"}>home</i> Startseite</Link></li>
+                <li>
+                    <div className={"divider"}></div>
+                </li>
+                <li>
+                    <a className={"subheader"}>
+                        Mathematik
+                    </a>
+                </li>
+                <li>
+                    <Link to={"/ruleofthree"}>Dreisatz</Link>
+                </li>
+                <li>
+                    <Link to={"/dice"}>Würfelsimulation</Link>
+                </li>
+            </ul>
+
         </header>;
     }
 }
@@ -46,11 +73,11 @@ class RuleOfThreeWithIntro extends Component {
                     Dreisatz
                     <small> :RuleOfThree</small>
                 </h3>
-                <p className={"text-muted"}>
-                    Weitere Information zum Dreisatz gibt es bei <a
-                    href={"https://www.frustfrei-lernen.de/mathematik/dreisatz-rechnen-proportional.html"}>
-                    „Frustfrei lernen“
-                </a>!
+                <p>
+                    Weitere Information zum Dreisatz gibt es bei
+                    <a href={"https://www.frustfrei-lernen.de/mathematik/dreisatz-rechnen-proportional.html"}>
+                        „Frustfrei lernen“
+                    </a>!
                 </p>
                 <p className={"flow-text"}>
                     Der Dreisatz – wer kennt ihn nicht aus dem Matheunterricht.

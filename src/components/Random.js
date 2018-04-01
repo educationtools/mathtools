@@ -5,7 +5,8 @@ import {Bar} from 'react-chartjs-2';
 function randomInt(min, max) {
     // Returns a random integer between <min> and <max>
 
-    return Math.round(Math.random() * (max - min)) + min;
+    //return Math.round(Math.random() * (max - min)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 class Dice extends Component {

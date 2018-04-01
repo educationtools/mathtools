@@ -7,7 +7,6 @@
       <change beforePath="" afterPath="$PROJECT_DIR$/src/elements.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" afterPath="$PROJECT_DIR$/src/components/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Random.js" afterPath="$PROJECT_DIR$/src/components/Random.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -90,8 +89,8 @@
       <file leaf-file-name="Random.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Random.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            <state relative-caret-position="85">
+              <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -331,7 +330,7 @@
       <workItem from="1520768655148" duration="1415000" />
       <workItem from="1520791220640" duration="2210000" />
       <workItem from="1520793470873" duration="2943000" />
-      <workItem from="1522593040092" duration="8080000" />
+      <workItem from="1522593040092" duration="8155000" />
     </task>
     <task id="LOCAL-00001" summary="Update README">
       <created>1519672032594</created>
@@ -417,11 +416,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520796399671</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Replace the not regular working random integer function in Dice module">
+      <created>1522609350414</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1522609350414</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52839000" />
+    <option name="totallyTimeSpent" value="52914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="53" width="1372" height="729" extended-state="6" />
@@ -466,7 +472,8 @@
     <MESSAGE value="Add materialize sidenav" />
     <MESSAGE value="Restructure dice code | Add mode to change speed | Count all rolls" />
     <MESSAGE value="Add diagram to dice" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add diagram to dice" />
+    <MESSAGE value="Replace the not regular working random integer function in Dice module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replace the not regular working random integer function in Dice module" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -875,8 +882,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Random.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="85">
+          <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

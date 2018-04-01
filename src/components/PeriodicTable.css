@@ -1,0 +1,30 @@
+
+.PeriodicTable-elements .row {
+    margin: 0;
+}
+
+.PeriodicTable-elements .row .col {
+    padding: 5px;
+}
+
+.PeriodicTable-Element .card {
+    margin: 0;
+}
+
+.PeriodicTable-Element .card .card-content {
+    padding: 3px;
+}
+
+.PeriodicTable-Element .card .card-title {
+    margin-bottom: 0;
+}
+
+.PeriodicTable-Element-first-row {
+    margin-bottom: 17px !important;
+}
+
+.PeriodicTable-Element-middle-row {
+}
+
+.PeriodicTable-Element-last-row {
+}

@@ -8,6 +8,7 @@ import './App.css';
 import RuleOfThree from '../components/RuleOfThree.js';
 import Dice from '../components/Random.js';
 import {Route, Link} from "react-router-dom";
+import PeriodicTable from "./PeriodicTable";
 
 class Header extends Component {
     componentDidMount() {
@@ -174,6 +175,7 @@ class AppController extends Component {
             <Route exact path={"/"} component={App}/>
             <Route path={"/ruleofthree"} component={RuleOfThreeWithIntro}/>
             <Route path={"/dice"} component={DiceWithIntro}/>
+            <Route path={"/periodictable"} component={PeriodicTable}/>
         </div>;
     }
 }

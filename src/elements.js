@@ -1354,8 +1354,96 @@ console.log(elements);
 console.log(height);
 console.log(width);
 
+const groups = [
+    {
+        width: 2,
+        name: "Hauptgruppe",
+        subgroups: [
+            {
+                width: 1,
+                name: "I"
+            },
+            {
+                width: 1,
+                name: "II"
+            }
+        ]
+    },
+    {
+        width: 10,
+        name: "Nebengruppe",
+        subgroups: [
+            {
+                width: 1,
+                name: "III"
+            },
+            {
+                width: 1,
+                name: "IV"
+            },
+            {
+                width: 1,
+                name: "V"
+            },
+            {
+                width: 1,
+                name: "VI"
+            },
+            {
+                width: 1,
+                name: "VII"
+            },
+            {
+                width: 3,
+                name: "VIII"
+            },
+            {
+                width: 1,
+                name: "I"
+            },
+            {
+                width: 1,
+                name: "II"
+            }
+        ]
+    },
+    {
+        width: 6,
+        name: "Hauptgruppe",
+        subgroups: [
+            {
+                width: 1,
+                name: "III"
+            },
+            {
+                width: 1,
+                name: "IV"
+            },
+            {
+                width: 1,
+                name: "V"
+            },
+            {
+                width: 1,
+                name: "VI"
+            },
+            {
+                width: 1,
+                name: "VII"
+            },
+            {
+                width: 1,
+                name: "VIII"
+            }
+        ]
+    },
+];
+
 const periodicTable = {
     width_in_percent: 100 / width,
-    elements: elements
+    elements: elements,
+    groups: groups
 };
+
+
 export default periodicTable;

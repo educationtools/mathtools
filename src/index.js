@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import AppController from './components/App';
+import AppController from './components/AppController';
 //import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from "react-router-dom";
 

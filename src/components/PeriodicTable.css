@@ -7,23 +7,27 @@
     padding: 5px;
 }
 
-.PeriodicTable-Element .card {
+.PeriodicTable-Element .card, .PeriodicTable-header .card {
     margin: 0;
 }
 
-.PeriodicTable-Element .card .card-content {
+.PeriodicTable-Element .card .card-content, .PeriodicTable-header .card .card-content {
     padding: 3px;
 }
 
-.PeriodicTable-Element .card .card-title {
+.PeriodicTable-Element .card .card-title, .PeriodicTable-header .card .card-title {
     margin-bottom: 0;
 }
 
+.PeriodicTable-header .card .card-title {
+    font-size: 18px;
+}
 .PeriodicTable-Element-first-row {
-    margin-bottom: 17px !important;
+    margin-bottom: 22px !important;
 }
 
 .PeriodicTable-Element-middle-row {
+    height: 32px;
 }
 
 .PeriodicTable-Element-last-row {
